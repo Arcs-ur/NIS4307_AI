@@ -10,7 +10,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 class ViolenceClass:
     def __init__(self):
-        self.VioCL = model.ViolenceClassifier.load_from_checkpoint("../NIS4307/train_logs/resnet18_pretrain_test/version_1/checkpoints/resnet18_pretrain_test-epoch=24-val_loss=0.05.ckpt")  #加载模型
+        self.VioCL = model.ViolenceClassifier.load_from_checkpoint("../NIS4307/train_logs/resnet18_pretrain_test/version_2/checkpoints/resnet18_pretrain_test-epoch=20-val_loss=0.03.ckpt")  #加载模型
         self.VioCL.to(device = 'cuda:0')  #指定设备
         self.trainer = Trainer(accelerator='gpu', devices=[0])
 
