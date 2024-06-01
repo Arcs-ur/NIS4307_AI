@@ -47,3 +47,5 @@ print(results)
 输出的结果应当是：
 ![4046624786fd09d6a2ea5a83a7fd6de](https://github.com/Arcs-ur/NIS4307_AI/assets/121781081/79239812-0978-42fc-93d2-b329cd0de99d)
 **在运行使用者自己的输入之前，可以先使用```NIS4307/demo.py```进行测试，如成功则可自行调用classify.py**
+# test.py文件使用说明
+如果要直接使用test.py文件对各个数据集进行测试，需要把测试的数据集放进test文件夹中，并确保NIS4307/Violence_224文件下同时存在test、val、train三个文件夹（里面有没有内容不影响）。
