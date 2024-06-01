@@ -1,0 +1,39 @@
+ #add noise to image
+import os
+from pathlib import Path
+from PIL import Image
+import numpy as np
+from scipy.ndimage import gaussian_filter
+
+# 设置输入和输出文件夹路径
+input_folder = 'C:\\Users\\陈楠\\Desktop\\violence_224\\train'  #请根据具体情况做修改
+output_folder = 'C:\\Users\\陈楠\\Desktop\\output_folder\\train_noise'  #请根据具体情况做修改
+
+# 确保输出文件夹存在
+Path(output_folder).mkdir(parents=True, exist_ok=True)
+
+# 遍历输入文件夹中的所有图像文件
+for filename in os.listdir(input_folder):
+    if filename.endswith('.jpg') or filename.endswith('.png'):
+        # 打开图像文件
+        image_path = os.path.join(input_folder, filename)
+        image = Image.open(image_path)
+
+        # 将图像转换为 Numpy 数组
+        img_array = np.array(image)
+
+        # 添加高斯噪声
+        noise = np.random.normal(0, 10, img_array.shape)  # 平均值为 0, 标准差为 10 的高斯噪声
+        noisy_img = img_array + noise
+        noisy_img = np.clip(noisy_img, 0, 255)  # 确保像素值在 0-255 范围内
+
+        # 应用高斯模糊平滑噪声
+        smoothed_img = gaussian_filter(noisy_img, sigma=0.5)
+
+        # 将 Numpy 数组转换回 PIL 图像
+        output_image = Image.fromarray(smoothed_img.astype('uint8'))
+
+        # 保存噪声图像到输出文件夹
+        output_path = os.path.join(output_folder, filename)
+        output_image.save(output_path)
+        print(f'Saved {filename} to {output_folder}')
