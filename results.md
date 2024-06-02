@@ -5,5 +5,6 @@ Basic results are shown as below:
 ### 对val训练集中的图片使用PGD算法生成对抗样本，保存在adversarial_images文件夹中，test结果如下
 ![42e55a4d465443816b5c90c3ed594b0](https://github.com/Arcs-ur/NIS4307_AI/assets/121781081/a7579b22-8728-4e2b-9a7d-72cdee38de60)
 ### 对AIGC测试集中的照片测试，test结果如下
-![50845ef506d0b09b81762a4990b17d5](https://github.com/Arcs-ur/NIS4307_AI/assets/121781081/ad739c88-c522-4ad1-8f15-b6cb8349feed)
+![010a9ef406b47bb1c74755246cd2bf5](https://github.com/Arcs-ur/NIS4307_AI/assets/121781081/67e9361b-898d-4802-bfb5-10b5c434169f)
+
 
